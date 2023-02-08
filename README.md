@@ -1,2 +1,18 @@
 # QlikSense.NETSDK
-Some codes using  .net and the SDK of Qlik Sense
+
+
+Extract Master Dimension and  Master Measures. 
+
+
+Install .net  version 6
+from https://www.nuget.org/packages/QlikSense.NetSDK  intall QlikSense.NetSDK  versionn16.2.0
+
+
+
+
+
+Copyright (c) 2023 Allow :)
+
+
+
+
