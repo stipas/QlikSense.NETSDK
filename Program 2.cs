@@ -1,4 +1,3 @@
-// See https://aka.ms/new-console-template for more information
 using System;
 using Qlik.Engine;
 using Qlik.Engine.Communication;
@@ -10,13 +9,13 @@ namespace ConnectDirectLocalServer
     {
         static void Main(string[] args)
         {
-            // The default port number is 4747 but can be customized
-            var uri = new Uri("https://ip-172-31-94-250.ec2.internal");
+            
+            var uri = new Uri("https://ipmyserver.com");//Internal URL of server
             var certs = CertificateManager.LoadCertificateFromStore();
 
             var location = Location.FromUri(uri);
 			//ILocation local = Qlik.Engine.Location.FromUri(new Uri("https://ip-172-31-94-250.ec2.internal"));
-            location.AsDirectConnection(userDirectory: "EC2QLIK-DEV", userId: "qlikpro", certificateCollection: certs);
+            location.AsDirectConnection(userDirectory: "MyDomine", userId: "MyUser", certificateCollection: certs);
 
             using (var hub = location.Hub())
             {
@@ -25,9 +24,8 @@ namespace ConnectDirectLocalServer
 			
 			try
 				{
-				using (var doc = location.App("b388e7c1-632e-4d0b-a591-2da718e245d9"))//id app 
+				using (var doc = location.App("b388e7c1-6i2e-4d0p-a592-2da717e245d8"))//id app 
 					{
-						//Console.WriteLine(doc);
 					var fields = doc.GetDimensionList();
 					var theList2 = fields.Layout.DimensionList;
 					//Dimensiones
@@ -54,7 +52,7 @@ namespace ConnectDirectLocalServer
 					   // Console.WriteLine($"{field2.Info.Id} | {field2.Measure.Label} |{string.Join(", ",field2.Measure.Def)}");                                           
 						lines.Add($"{field2.Info.Id}|{field2.Measure.Label}|{string.Join(", ",field2.Measure.Def)}");
 						}
-					File.WriteAllLines("D:/QLIK_DATA/Files/Master Items/Measures.txt", lines.ToArray());
+					File.WriteAllLines("C:/Mypathlocal/Measures.txt", lines.ToArray());
 					lines.Clear();  
                     //Fields
                     List<string> lines = new List<string>();
@@ -64,7 +62,7 @@ namespace ConnectDirectLocalServer
                         	//Console.WriteLine(appField.Name);
                         	lines.Add($"{appField.Name}");
                     	}                           
-                    File.WriteAllLines("D:/QLIK_DATA/Files/Master Items/Fields.txt", lines.ToArray());
+                    File.WriteAllLines("C:/Mypathlocal/Fields.txt", lines.ToArray());
                     lines.Clear(); 					
 					}
 
