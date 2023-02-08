@@ -10,4 +10,15 @@ from https://www.nuget.org/packages/QlikSense.NetSDK  intall QlikSense.NetSDK  v
 
 
 
+the main idea is extract all master dimension and measures from a  qlik server. we can use QSDA PRO but it isn´t free. 
+this code only provide a guide to extract only those field from MetaData: 
+
+{Name Dimension, Expression of Dimension}, {Name Measure, Expression Measure}
+
+
+
+
+Copyright (c) 2023 Allow :)
+
+i recomend this repository: https://github.com/AptkQlik/PublicExamples
 
