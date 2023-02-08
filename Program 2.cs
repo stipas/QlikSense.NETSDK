@@ -54,16 +54,16 @@ namespace ConnectDirectLocalServer
 						}
 					File.WriteAllLines("C:/Mypathlocal/Measures.txt", lines.ToArray());
 					lines.Clear();  
-                    //Fields
-                    List<string> lines = new List<string>();
-                    lines.Add("Id");
-                    foreach (var appField in theList2.Items)
-                    	{                              
-                        	//Console.WriteLine(appField.Name);
-                        	lines.Add($"{appField.Name}");
-                    	}                           
-                    File.WriteAllLines("C:/Mypathlocal/Fields.txt", lines.ToArray());
-                    lines.Clear(); 					
+                    			//Fields
+                    			
+                    			lines.Add("Id");
+                    			foreach (var appField in theList2.Items)
+                    			{                              
+                        			//Console.WriteLine(appField.Name);
+                        			lines.Add($"{appField.Name}");
+                    			}                           
+                    			File.WriteAllLines("C:/Mypathlocal/Fields.txt", lines.ToArray());
+                    			lines.Clear(); 					
 					}
 
 				}
